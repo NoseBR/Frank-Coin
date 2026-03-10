@@ -2,6 +2,8 @@ import { Content } from './types';
 
 export const TOKEN_ADDRESS = "HKjBJCkD35nURi5oMbZ4eu9WeWhoKBwLyfddVB99pump";
 export const FRANK_IMAGE = "https://image2url.com/r2/default/images/1773112155273-c2f8d0fe-abdb-4a50-9915-719bd1b1abc5.jpeg";
+export const TSHIRT_IMAGE = "https://i.ibb.co/nMrD9zqh/IMG-5331.png";
+export const HOODIE_IMAGE = "https://i.ibb.co/qMgGxWQj/IMG-5332.jpg";
 
 export const translations: Record<'en' | 'pt', Content> = {
   en: {
@@ -9,6 +11,7 @@ export const translations: Record<'en' | 'pt', Content> = {
       info: "Info",
       tokenomics: "Tokenomics",
       whitepaper: "On the News",
+      shop: "Frank Shop",
     },
     hero: {
       title: "FRANK COIN",
@@ -39,6 +42,25 @@ export const translations: Record<'en' | 'pt', Content> = {
       featured: "Featured Article",
       readMore: "Read Full Article",
     },
+    shop: {
+      title: "Frank Shop",
+      subtitle: "Exclusive Frank Coin Merch. Don't miss out!",
+      cta: "Coming Soon",
+      items: [
+        {
+          name: "Frank Classic Tee",
+          price: "25.00 USDC",
+          description: "High-quality cotton tee with the legendary Frank logo.",
+          image: TSHIRT_IMAGE,
+        },
+        {
+          name: "Frank 'Surpassed' Hoodie",
+          price: "45.00 USDC",
+          description: "Comfortable hoodie for those who saw it coming.",
+          image: HOODIE_IMAGE,
+        }
+      ]
+    },
     footer: {
       copyright: "© 2024 Frank Coin. Frank didn't see this one coming!",
     },
@@ -48,6 +70,7 @@ export const translations: Record<'en' | 'pt', Content> = {
       info: "Info",
       tokenomics: "Tokenomics",
       whitepaper: "Na Mídia",
+      shop: "Frank Shop",
     },
     hero: {
       title: "FRANK COIN",
@@ -77,6 +100,25 @@ export const translations: Record<'en' | 'pt', Content> = {
       link: "https://criptojornal.com.br/Noticia?slug=de-ovocoin-a-baleia-bicuda-o-frank-tentou-de-tudo-ate",
       featured: "Artigo em Destaque",
       readMore: "Ler Artigo Completo",
+    },
+    shop: {
+      title: "Frank Shop",
+      subtitle: "Produtos exclusivos Frank Coin. Não fique de fora!",
+      cta: "Em Breve",
+      items: [
+        {
+          name: "Camiseta Frank Clássica",
+          price: "25.00 USDC",
+          description: "Camiseta de algodão de alta qualidade com o lendário logo do Frank.",
+          image: TSHIRT_IMAGE,
+        },
+        {
+          name: "Moletom Frank 'Superado'",
+          price: "45.00 USDC",
+          description: "Moletom confortável para quem já esperava por essa.",
+          image: HOODIE_IMAGE,
+        }
+      ]
     },
     footer: {
       copyright: "© 2024 Frank Coin. Por essa nem o frank esperava!",

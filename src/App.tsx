@@ -12,12 +12,13 @@ import {
   Droplets,
   ExternalLink,
   Menu,
-  X
+  X,
+  ShoppingBag
 } from 'lucide-react';
 import { TOKEN_ADDRESS, FRANK_IMAGE, translations } from './constants';
 import { Language } from './types';
 
-const ImageWithFallback = ({ src, alt, className }: { src: string, alt: string, className?: string }) => {
+const ImageWithFallback = ({ src, alt, className, loading = 'lazy' }: { src: string, alt: string, className?: string, loading?: 'lazy' | 'eager' }) => {
   const [error, setError] = React.useState(false);
   // Use a high-quality placeholder that looks like a crypto profile if the main one fails
   const fallbackSrc = `https://picsum.photos/seed/${TOKEN_ADDRESS}/400/400`;
@@ -27,6 +28,8 @@ const ImageWithFallback = ({ src, alt, className }: { src: string, alt: string, 
       src={error ? fallbackSrc : src} 
       alt={alt} 
       className={className}
+      loading={loading}
+      decoding="async"
       onError={(e) => {
         console.error(`Failed to load image: ${src}`);
         setError(true);
@@ -70,7 +73,7 @@ export default function App() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['hero', 'info', 'tokenomics', 'whitepaper'];
+      const sections = ['hero', 'info', 'tokenomics', 'whitepaper', 'shop'];
       const current = sections.find(section => {
         const element = document.getElementById(section);
         if (element) {
@@ -96,7 +99,7 @@ export default function App() {
             onClick={() => scrollToSection('hero')}
           >
             <div className="w-10 h-10 bg-[#00FF00] rounded-full flex items-center justify-center overflow-hidden">
-              <ImageWithFallback src={FRANK_IMAGE} alt="Frank Logo" className="w-full h-full object-cover" />
+              <ImageWithFallback src={FRANK_IMAGE} alt="Frank Logo" className="w-full h-full object-cover" loading="eager" />
             </div>
             <span className="font-black text-2xl tracking-tighter italic">FRANK COIN</span>
           </div>
@@ -111,6 +114,9 @@ export default function App() {
             </button>
             <button onClick={() => scrollToSection('whitepaper')} className={`text-sm font-bold uppercase tracking-widest hover:text-[#00FF00] transition-colors ${activeSection === 'whitepaper' ? 'text-[#00FF00]' : ''}`}>
               {content.nav.whitepaper}
+            </button>
+            <button onClick={() => scrollToSection('shop')} className={`text-sm font-bold uppercase tracking-widest hover:text-[#00FF00] transition-colors ${activeSection === 'shop' ? 'text-[#00FF00]' : ''}`}>
+              {content.nav.shop}
             </button>
             
             <div className="h-4 w-[1px] bg-white/20 mx-2" />
@@ -158,6 +164,9 @@ export default function App() {
               </button>
               <button onClick={() => scrollToSection('whitepaper')} className="text-3xl font-black italic uppercase tracking-tighter">
                 {content.nav.whitepaper}
+              </button>
+              <button onClick={() => scrollToSection('shop')} className="text-3xl font-black italic uppercase tracking-tighter">
+                {content.nav.shop}
               </button>
             </div>
           </motion.div>
@@ -320,6 +329,8 @@ export default function App() {
                     alt="News Preview"
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     referrerPolicy="no-referrer"
+                    loading="lazy"
+                    decoding="async"
                   />
                   <div className="absolute top-4 left-4 bg-[#00FF00] text-black text-[10px] font-black uppercase px-2 py-1 rounded">
                     Cripto Jornal
@@ -351,6 +362,53 @@ export default function App() {
                   </a>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Shop Section */}
+        <section id="shop" className="py-32 px-6 bg-white/[0.02] border-t border-white/5">
+          <div className="max-w-7xl mx-auto">
+            <div className="flex items-center gap-3 mb-16 justify-center">
+              <ShoppingBag className="text-[#00FF00] w-8 h-8" />
+              <h2 className="text-4xl md:text-6xl font-black italic uppercase tracking-tighter">
+                {content.shop.title}
+              </h2>
+            </div>
+            
+            <p className="text-center text-xl text-white/60 mb-16 max-w-2xl mx-auto">
+              {content.shop.subtitle}
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {content.shop.items.map((item, i) => (
+                <motion.div 
+                  key={i}
+                  whileHover={{ y: -10 }}
+                  className="bg-black border border-white/10 rounded-3xl overflow-hidden group"
+                >
+                  <div className="aspect-square overflow-hidden relative">
+                    <img 
+                      src={item.image} 
+                      alt={item.name}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      loading="lazy"
+                      decoding="async"
+                      referrerPolicy="no-referrer"
+                    />
+                    <div className="absolute top-4 right-4 bg-[#00FF00] text-black font-black px-4 py-2 rounded-full text-sm">
+                      {item.price}
+                    </div>
+                  </div>
+                  <div className="p-8">
+                    <h3 className="text-2xl font-black italic uppercase tracking-tighter mb-2">{item.name}</h3>
+                    <p className="text-white/60 mb-6">{item.description}</p>
+                    <button className="w-full py-4 bg-white/10 hover:bg-[#00FF00] hover:text-black transition-all rounded-xl font-black uppercase italic">
+                      {content.shop.cta}
+                    </button>
+                  </div>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>

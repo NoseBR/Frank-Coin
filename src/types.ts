@@ -3,6 +3,7 @@ export interface Content {
     info: string;
     tokenomics: string;
     whitepaper: string;
+    shop: string;
   };
   hero: {
     title: string;
@@ -32,6 +33,17 @@ export interface Content {
     link: string;
     featured: string;
     readMore: string;
+  };
+  shop: {
+    title: string;
+    subtitle: string;
+    cta: string;
+    items: {
+      name: string;
+      price: string;
+      description: string;
+      image: string;
+    }[];
   };
   footer: {
     copyright: string;
