@@ -1,7 +1,7 @@
 import { Content } from './types';
 
 export const TOKEN_ADDRESS = "HKjBJCkD35nURi5oMbZ4eu9WeWhoKBwLyfddVB99pump";
-export const FRANK_IMAGE = "https://static.jup.ag/tokens/HKjBJCkD35nURi5oMbZ4eu9WeWhoKBwLyfddVB99pump.png";
+export const FRANK_IMAGE = "https://image2url.com/r2/default/images/1773112155273-c2f8d0fe-abdb-4a50-9915-719bd1b1abc5.jpeg";
 
 export const translations: Record<'en' | 'pt', Content> = {
   en: {
@@ -36,6 +36,11 @@ export const translations: Record<'en' | 'pt', Content> = {
       title: "On the News",
       content: "The story of Frank, the 'honest' developer who tried to launch everything from OvoCoin to Baleia Bicuda. Discover how a community-led meme token turned a series of failed launches into a crypto phenomenon. 'Frank tried everything, but the community chose the truth.'",
       link: "https://criptojornal.com.br/Noticia?slug=de-ovocoin-a-baleia-bicuda-o-frank-tentou-de-tudo-ate",
+      featured: "Featured Article",
+      readMore: "Read Full Article",
+    },
+    footer: {
+      copyright: "© 2024 Frank Coin. The most honest coin.",
     },
   },
   pt: {
@@ -70,6 +75,11 @@ export const translations: Record<'en' | 'pt', Content> = {
       title: "Na Mídia",
       content: "A história de Frank, o desenvolvedor 'honesto' que tentou lançar de tudo, de OvoCoin a Baleia Bicuda. Descubra como um meme token liderado pela comunidade transformou uma série de lançamentos fracassados em um fenômeno cripto. 'Frank tentou de tudo, mas a comunidade escolheu a verdade.'",
       link: "https://criptojornal.com.br/Noticia?slug=de-ovocoin-a-baleia-bicuda-o-frank-tentou-de-tudo-ate",
+      featured: "Artigo em Destaque",
+      readMore: "Ler Artigo Completo",
+    },
+    footer: {
+      copyright: "© 2024 Frank Coin. A moeda mais honesta.",
     },
   },
 };

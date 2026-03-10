@@ -327,7 +327,7 @@ export default function App() {
                 <div className="p-8 md:p-12 flex flex-col justify-center">
                   <div className="flex items-center gap-2 mb-4 text-[#00FF00]">
                     <Globe className="w-4 h-4" />
-                    <span className="text-xs font-bold uppercase tracking-widest">Featured Article</span>
+                    <span className="text-xs font-bold uppercase tracking-widest">{content.whitepaper.featured}</span>
                   </div>
                   
                   <h3 className="text-2xl md:text-3xl font-black italic uppercase tracking-tighter mb-6 leading-tight">
@@ -344,7 +344,7 @@ export default function App() {
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 text-[#00FF00] font-bold hover:underline group/link"
                   >
-                    Read Full Article 
+                    {content.whitepaper.readMore} 
                     <ExternalLink className="w-4 h-4 transition-transform group-hover/link:translate-x-1 group-hover/link:-translate-y-1" />
                   </a>
                 </div>
@@ -365,7 +365,7 @@ export default function App() {
           </div>
           
           <p className="text-white/40 text-sm font-medium">
-            © 2024 Frank Coin. The most honest coin.
+            {content.footer.copyright}
           </p>
           
           <div className="flex gap-6">

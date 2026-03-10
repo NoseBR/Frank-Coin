@@ -30,6 +30,11 @@ export interface Content {
     title: string;
     content: string;
     link: string;
+    featured: string;
+    readMore: string;
+  };
+  footer: {
+    copyright: string;
   };
 }
 
