@@ -124,10 +124,19 @@ export default function App() {
             </button>
           </div>
 
-          {/* Mobile Menu Toggle */}
-          <button className="md:hidden p-2" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-            {isMenuOpen ? <X /> : <Menu />}
-          </button>
+          {/* Mobile Actions */}
+          <div className="flex items-center gap-2 md:hidden">
+            <button 
+              onClick={toggleLang}
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-white/20 hover:border-[#00FF00] hover:text-[#00FF00] transition-all text-xs font-bold uppercase tracking-tighter"
+            >
+              <Globe className="w-3.5 h-3.5" />
+              {lang === 'en' ? 'EN' : 'PT'}
+            </button>
+            <button className="p-2" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+              {isMenuOpen ? <X /> : <Menu />}
+            </button>
+          </div>
         </div>
       </nav>
 
@@ -149,13 +158,6 @@ export default function App() {
               </button>
               <button onClick={() => scrollToSection('whitepaper')} className="text-3xl font-black italic uppercase tracking-tighter">
                 {content.nav.whitepaper}
-              </button>
-              <button 
-                onClick={toggleLang}
-                className="flex items-center justify-center gap-2 text-xl font-bold uppercase"
-              >
-                <Globe className="w-6 h-6" />
-                {lang === 'en' ? 'English / Português' : 'Português / English'}
               </button>
             </div>
           </motion.div>
