@@ -12,7 +12,7 @@ export const translations: Record<'en' | 'pt', Content> = {
     },
     hero: {
       title: "FRANK COIN",
-      subtitle: "The most honest coin in the crypto space. Frank is here.",
+      subtitle: "Frank didn't see this one coming: a meme coin of himself!",
       cta: "Buy Now",
       buyLink: "https://pump.fun/coin/HKjBJCkD35nURi5oMbZ4eu9WeWhoKBwLyfddVB99pump",
     },
@@ -40,7 +40,7 @@ export const translations: Record<'en' | 'pt', Content> = {
       readMore: "Read Full Article",
     },
     footer: {
-      copyright: "© 2024 Frank Coin. The most honest coin.",
+      copyright: "© 2024 Frank Coin. Frank didn't see this one coming!",
     },
   },
   pt: {
@@ -51,7 +51,7 @@ export const translations: Record<'en' | 'pt', Content> = {
     },
     hero: {
       title: "FRANK COIN",
-      subtitle: "A moeda mais honesta no espaço cripto. Frank chegou.",
+      subtitle: "Por essa nem o frank esperava, uma meme coin dele mesmo!",
       cta: "Comprar Agora",
       buyLink: "https://criptonopix.app.br/solana",
     },
@@ -79,7 +79,7 @@ export const translations: Record<'en' | 'pt', Content> = {
       readMore: "Ler Artigo Completo",
     },
     footer: {
-      copyright: "© 2024 Frank Coin. A moeda mais honesta.",
+      copyright: "© 2024 Frank Coin. Por essa nem o frank esperava!",
     },
   },
 };
